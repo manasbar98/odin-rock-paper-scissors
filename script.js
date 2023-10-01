@@ -1,5 +1,5 @@
 // Randomly generate computer choice: Rock, Paper, Scissors //
-const GameOptions = ["Rock", "Paper", "Scissors"];
+const GameOptions = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
     return GameOptions[Math.floor(Math.random()*GameOptions.length)];
@@ -17,22 +17,31 @@ function playerChoice() {
 
 console.log(playerChoice())
 
-// // Prompt error if rock, paper, or scissors is not chosen
+// Prompt error if rock, paper, or scissors is not chosen
 
-// if (playerChoice != "Scissors" || playerChoice != "Rock" || playerChoice != "Paper") {
-//     prompt("Invalid Choice: Please try again");
-// }
-// //Display "You lose! Rock beats Scissors" if player selection is scissors and computer selection is rock
+// Rename computer choice to computerSelection and player choice to playerSelection
 
-//Display "You lose! Scissors beats Paper" if player selection is paper and computer selection is scissors
+let computerSelection = getComputerChoice();
+let playerSelection = playerchoice();
 
-//Display "You lose! Paper beats Rock" if player selection is rock and computer selection is paper
-
-//Display "You win! Rock beats Scissors" if player selection is rock and computer selection is scissors
-
-//Display "You win! Scissors beats Paper" if player selection is scissors and computer selection is Paper
-
-//Display "You win! Paper beats Rock" if player selection is paper and computer selection is rock
+//Display "You lose! Rock beats Scissors" if player selection is scissors and computer selection is rock
+function playRound (playerSelection, computerSelection) {
+        if (computerSelection = "rock" && playerSelection = "scissors") {
+        alert("You lose! Rock beats Scissors");
+    } elseif (computerSelection = "scissors" && playerSelection = "paper") {
+        alert("You lose! Scissors beats Paper");
+    } elseif (computerSelection = "paper" && playerSelection = "rock") {
+        alert("You lose! Paper beats Rock");
+    } elseif (computerSelection = "scissors" && playerSelection = "rock") {
+        alert("You win! Rock beats Scissors");
+    } elseif (computerSelection = "paper" && playerSelection = "scissors") {
+        alert("You win! Scissors beats Paper");
+    } elseif (computerSelection = "rock" && playerSelection = "paper") {
+        alert("You win! Paper beats Rock");
+    } elseif (computerSelection === playerSelection) {
+        alert("Tie! You have selected the same option as the computer");
+    }
+}
 
 // If computer and player selection are the some, prompt re-do
 
