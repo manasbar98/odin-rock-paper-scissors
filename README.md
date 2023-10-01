@@ -1,1 +1,1 @@
-# odin-rock-paper-scissors
+In this project, I am creating the classic rock paper scissors game using Javascript. I demonstrate the ability to use common Javascript elements including functions to create interactive workflows.
