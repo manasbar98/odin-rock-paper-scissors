@@ -53,6 +53,9 @@ function game () {
     let playerScore = 0;
     let computerScore = 0;
     let draws = 0;
+    let playerWin = "Congrats, Player wins!";
+    let computerWin = "Oh no, Computer wins";
+    let gameDraw = "The game ends in a draw";
 
     // loop to run 5 rounds
     for (let i = 1; i <= 5; i++) {
@@ -75,6 +78,11 @@ function game () {
     console.log("Your score is " + playerScore);
     console.log("The computer's score is " + computerScore)
     }
+    if (playerScore > computerScore) {
+        console.log(playerWin);
+    } else if (playerScore < computerScore) {
+        console.log(computerWin);
+    } else {console.log(gameDraw);
 }
-
+}
 game();
