@@ -22,28 +22,30 @@ console.log(playerChoice())
 // Rename computer choice to computerSelection and player choice to playerSelection
 
 let computerSelection = getComputerChoice();
-let playerSelection = playerchoice();
+let playerSelection = playerChoice();
 
-//Display "You lose! Rock beats Scissors" if player selection is scissors and computer selection is rock
+//Create function to play a single round. Display "You lose! Rock beats Scissors" if player selection is scissors and computer selection is rock and so-on to follow game logic
 function playRound (playerSelection, computerSelection) {
-        if (computerSelection = "rock" && playerSelection = "scissors") {
-        alert("You lose! Rock beats Scissors");
-    } elseif (computerSelection = "scissors" && playerSelection = "paper") {
-        alert("You lose! Scissors beats Paper");
-    } elseif (computerSelection = "paper" && playerSelection = "rock") {
-        alert("You lose! Paper beats Rock");
-    } elseif (computerSelection = "scissors" && playerSelection = "rock") {
-        alert("You win! Rock beats Scissors");
-    } elseif (computerSelection = "paper" && playerSelection = "scissors") {
-        alert("You win! Scissors beats Paper");
-    } elseif (computerSelection = "rock" && playerSelection = "paper") {
-        alert("You win! Paper beats Rock");
-    } elseif (computerSelection === playerSelection) {
-        alert("Tie! You have selected the same option as the computer");
+    if (computerSelection == "rock" && playerSelection == "scissors") {
+        return "You lose! Rock beats Scissors";
+    } else if (computerSelection == "scissors" && playerSelection == "paper") {
+        return "You lose! Scissors beats Paper";
+    } else if (computerSelection == "paper" && playerSelection == "rock") {
+        return "You lose! Paper beats Rock";
+    } else if (computerSelection == "scissors" && playerSelection == "rock") {
+        return "You win! Rock beats Scissors";
+    } else if (computerSelection == "paper" && playerSelection == "scissors") {
+        return "You win! Scissors beats Paper";
+    } else if (computerSelection == "rock" && playerSelection == "paper") {
+        return "You win! Paper beats Rock";
+    } else if (computerSelection == playerSelection) {
+        return "Tie! You have selected the same option as the computer";
+    } else {
+        return "Please select again"
     }
 }
 
-// If computer and player selection are the some, prompt re-do
+console.log(playRound(playerSelection,computerSelection));
 
 // If computer wins, add 1 to computer score
 
