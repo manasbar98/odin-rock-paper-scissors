@@ -5,8 +5,6 @@ function getComputerChoice() {
     return GameOptions[Math.floor(Math.random()*GameOptions.length)];
 }
 
-console.log(getComputerChoice());
-
 // Ask player for their selection: Rock, Paper, Scissors
 // Make sure player selection is case insensitive
 
@@ -15,17 +13,18 @@ function playerChoice() {
     return playerInput;
 } 
 
-console.log(playerChoice())
-
 // Prompt error if rock, paper, or scissors is not chosen
 
 // Rename computer choice to computerSelection and player choice to playerSelection
 
-let computerSelection = getComputerChoice();
-let playerSelection = playerChoice();
+
+
 
 //Create function to play a single round. Display "You lose! Rock beats Scissors" if player selection is scissors and computer selection is rock and so-on to follow game logic
-function playRound (playerSelection, computerSelection) {
+function playRound () {
+    let computerSelection = getComputerChoice();
+    let playerSelection = playerChoice();
+
     if (computerSelection == "rock" && playerSelection == "scissors") {
         return "You lose! Rock beats Scissors";
     } else if (computerSelection == "scissors" && playerSelection == "paper") {
@@ -39,18 +38,43 @@ function playRound (playerSelection, computerSelection) {
     } else if (computerSelection == "rock" && playerSelection == "paper") {
         return "You win! Paper beats Rock";
     } else if (computerSelection == playerSelection) {
-        return "Tie! You have selected the same option as the computer";
+        return "Tie!";
     } else {
-        return "Please select again"
+        return "Please select again";
     }
 }
 
-console.log(playRound(playerSelection,computerSelection));
+// Run 5 rounds to complete a game
 
-// If computer wins, add 1 to computer score
+function game () {
+    
 
-// If player wins, add 1 to player score
+    // Add score depending on result of a round
+    let playerScore = 0;
+    let computerScore = 0;
+    let draws = 0;
 
-// Show scoreboard and display "Best of 5 rounds"
+    // loop to run 5 rounds
+    for (let i = 1; i <= 5; i++) {
+    let roundResult = playRound ();
+    console.log(roundResult);
+   
 
-// Report winner when 5 rounds have passed
+    if (roundResult == "You win! Rock beats Scissors" || roundResult == "You win! Scissors beats Paper" || roundResult == "You win! Paper beats Rock") {
+        playerScore++;
+    }
+
+    else if (roundResult == "Tie!") {
+        draws++;
+    }
+
+    else {
+        computerScore++;
+    }
+
+    console.log("Your score is " + playerScore);
+    console.log("The computer's score is " + computerScore)
+    }
+}
+
+game();
